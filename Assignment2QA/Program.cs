@@ -62,9 +62,9 @@ namespace Assignment2QA
                 int output = 0;
                 do
                 {
-                    Console.WriteLine("Please enter an integer non-decimal number bigger than 0");
+                    Console.WriteLine("Please enter an integer non-decimal number");
                     input = Console.ReadLine();
-                } while (!(int.TryParse(input, out output) && output > 0));
+                } while (!int.TryParse(input, out output));
 
                 return output;
             }
