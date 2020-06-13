@@ -54,44 +54,7 @@ namespace Assignment2QA
                     sides[i] = EnterSide();
                 }
 
-                if (DoesFormATriangle())
-                {
-                    TypeOfTriangle();
-                }
-                else {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Does not form a triangle");
-                }
-            }
-
-            void TypeOfTriangle() {
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                bool equilateral = (sides[0] == sides[1]) && (sides[0] == sides[2]);
-                bool scalene = (sides[0] != sides[1]) && (sides[0] != sides[2]) && (sides[1] != sides[2]);
-                if (equilateral)
-                {
-                    Console.WriteLine("It is a Equilateral Triangle");
-                }
-                else if (scalene)
-                {
-                    Console.WriteLine("It is a Scalene Triangle");
-                }
-                else {
-                    Console.WriteLine("It is a Isosceles Triangle");
-                }
-            }
-
-            bool DoesFormATriangle() {
-                bool conditionA = sides[0] + sides[1] > sides[2];
-                bool conditionB = sides[0] + sides[2] > sides[1];
-                bool conditionC = sides[1] + sides[2] > sides[0];
-
-                if (conditionA && conditionB && conditionC) {
-                    return true;
-                }else {
-                    return false;
-                }
+                Console.WriteLine(TriangleSolver.Analyze(sides[0], sides[1], sides[2]));
             }
 
             int EnterSide() {
